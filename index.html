@@ -16,107 +16,219 @@
 body {
     min-height: 100vh;
     display: flex;
-    align-items: center;
     justify-content: center;
-    background:
-      radial-gradient(circle at top, #252044 0%, #0a0a16 45%, #03040a 100%);
-    font-family: Arial, sans-serif;
-    color: white;
+    align-items: center;
+    font-family: 'Arial', sans-serif;
+    background: #050912;
     overflow: hidden;
 }
 
+/* BATTLE BACKGROUND */
+.background {
+    position: fixed;
+    inset: 0;
+    z-index: -3;
+    background:
+      linear-gradient(rgba(3,7,15,.35), rgba(3,7,15,.65)),
+      url("battle.jpg") center center / cover no-repeat;
+    animation: cinematic 18s ease-in-out infinite alternate;
+}
+
+@keyframes cinematic {
+    from { transform: scale(1); }
+    to { transform: scale(1.12); }
+}
+
+/* LIGHTNING EFFECT */
+.lightning {
+    position: fixed;
+    inset: 0;
+    z-index: -2;
+    background: rgba(210,230,255,.8);
+    opacity: 0;
+    pointer-events: none;
+    animation: lightning 7s infinite;
+}
+
+@keyframes lightning {
+    0%, 88%, 90%, 93%, 100% { opacity: 0; }
+    89% { opacity: .35; }
+    91% { opacity: .05; }
+    92% { opacity: .55; }
+}
+
+/* SNOW AND STORM */
+.snow {
+    position: fixed;
+    inset: -100px 0 0;
+    z-index: -1;
+    pointer-events: none;
+    background-image:
+      radial-gradient(2px 2px at 20px 30px, white 99%, transparent),
+      radial-gradient(2px 2px at 100px 150px, white 99%, transparent),
+      radial-gradient(3px 3px at 200px 80px, white 99%, transparent),
+      radial-gradient(2px 2px at 300px 250px, white 99%, transparent),
+      radial-gradient(2px 2px at 400px 100px, white 99%, transparent);
+    background-size: 450px 350px;
+    animation: snowfall 9s linear infinite;
+    opacity: .65;
+}
+
+@keyframes snowfall {
+    from { transform: translateY(-100px); }
+    to { transform: translateY(450px); }
+}
+
+/* DARK OVERLAY */
+.overlay {
+    position: fixed;
+    inset: 0;
+    z-index: -1;
+    background: linear-gradient(
+      90deg,
+      rgba(0,0,0,.45),
+      rgba(0,0,0,.25),
+      rgba(0,0,0,.45)
+    );
+}
+
+/* MAIN CARD */
 .container {
     width: 90%;
-    max-width: 430px;
-    padding: 38px 24px;
+    max-width: 460px;
+    padding: 40px 25px;
     text-align: center;
-    background: rgba(17, 18, 35, 0.92);
-    border: 1px solid #bd8cff;
     border-radius: 22px;
+
+    background: rgba(8,14,25,.78);
+    backdrop-filter: blur(12px);
+
+    border: 1px solid rgba(180,210,255,.65);
+
     box-shadow:
-      0 0 25px #9d50ff44,
-      inset 0 0 20px #9d50ff11;
-    position: relative;
+      0 0 35px rgba(120,170,255,.25),
+      inset 0 0 25px rgba(255,255,255,.04);
+
+    animation: appear 1.2s ease;
+}
+
+@keyframes appear {
+    from {
+        opacity: 0;
+        transform: translateY(35px) scale(.95);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.crown {
+    font-size: 27px;
+    margin-bottom: 12px;
 }
 
 .royal {
     font-size: 39px;
     font-weight: 900;
     letter-spacing: 5px;
-    background: linear-gradient(90deg, #ffdb70, #fff3bb, #d69b24);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    text-shadow: 0 0 22px #ffcc5555;
+    color: #f5d889;
+    text-shadow: 0 0 20px #f5c65b88;
     margin-bottom: 12px;
 }
 
 .line {
-    width: 100px;
+    width: 110px;
     height: 3px;
-    margin: 0 auto 25px;
-    background: linear-gradient(90deg, transparent, #e9b84d, transparent);
+    margin: 0 auto 27px;
+    background: linear-gradient(
+      90deg, transparent, #e5c16c, transparent
+    );
 }
 
 h2 {
-    color: #c99aff;
-    font-size: 24px;
+    font-size: 23px;
     letter-spacing: 2px;
+    color: #dcecff;
+    text-shadow: 0 0 15px #9fcaff;
     margin-bottom: 30px;
-    text-shadow: 0 0 15px #a855f7;
 }
 
 .label {
-    color: #aaa8c0;
     font-size: 12px;
-    letter-spacing: 3px;
-    margin-bottom: 13px;
+    letter-spacing: 4px;
+    color: #b7c9df;
+    margin-bottom: 15px;
 }
 
+/* KEY BUTTON */
 .key {
     padding: 19px 8px;
-    border: 1px solid #b56aff;
+    border: 1px solid #b8d8ff;
     border-radius: 12px;
-    background: #090a15;
-    color: #ffffff;
+    background: rgba(0,0,0,.65);
+    color: white;
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
     cursor: pointer;
-    transition: 0.3s;
-    box-shadow: 0 0 15px #a855f733;
+    transition: .3s;
+    user-select: none;
 }
 
 .key:hover {
-    background: #a855f7;
-    color: white;
-    box-shadow: 0 0 25px #a855f7;
+    background: #dcecff;
+    color: #07101e;
+    box-shadow: 0 0 25px #a9d1ff;
     transform: scale(1.03);
 }
 
+.key:active {
+    transform: scale(.97);
+}
+
 #message {
-    margin-top: 20px;
+    margin-top: 23px;
     min-height: 20px;
-    color: #61ffb0;
     font-size: 13px;
     letter-spacing: 1px;
+    color: #7dffbd;
 }
 
 .footer {
     margin-top: 35px;
     font-size: 11px;
-    color: #77758e;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
+    color: #a6b5c9;
 }
 
-.crown {
-    font-size: 22px;
-    margin-bottom: 8px;
-}
+/* MOBILE */
+@media(max-width:480px) {
+    .royal {
+        font-size: 32px;
+    }
 
+    h2 {
+        font-size: 19px;
+    }
+
+    .key {
+        font-size: 15px;
+    }
+
+    .container {
+        padding: 35px 18px;
+    }
+}
 </style>
 </head>
 
 <body>
+
+<div class="background"></div>
+<div class="lightning"></div>
+<div class="snow"></div>
+<div class="overlay"></div>
 
 <div class="container">
 
@@ -145,13 +257,14 @@ h2 {
 <script>
 async function copyKey() {
     const key = "BLZ-HXCQ6W-D5UT7C";
-    const msg = document.getElementById("message");
+    const message = document.getElementById("message");
 
     try {
         await navigator.clipboard.writeText(key);
-        msg.innerText = "✓ KEY COPIED SUCCESSFULLY!";
-    } catch (e) {
-        msg.innerText = "COPY FAILED - USE HTTPS";
+
+        message.innerHTML = "✓ KEY COPIED SUCCESSFULLY!";
+    } catch (error) {
+        message.innerHTML = "COPY FAILED - USE HTTPS";
     }
 }
 </script>
