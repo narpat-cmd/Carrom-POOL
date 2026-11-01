@@ -4,7 +4,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>ROYALMOD | BLITZ FREE KEY</title>
+<title>ROYALMOD - BLITZ FREE KEY</title>
 
 <style>
 * {
@@ -15,203 +15,148 @@
 
 body {
     min-height: 100vh;
-    background: #050912;
-    color: white;
-    font-family: Arial, sans-serif;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     overflow: hidden;
+    font-family: Arial, sans-serif;
+    background: #050b15;
+    color: white;
 }
 
-/* ANIMATED SKY */
-.sky {
+/* SNOW BACKGROUND */
+body::before {
+    content: "";
     position: fixed;
     inset: 0;
+    z-index: -3;
     background:
-      radial-gradient(ellipse at 50% 20%, #273b59 0%, #101b2c 40%, #03060d 100%);
-    z-index: -5;
+      radial-gradient(ellipse at 50% 0%, #243e60, transparent 65%),
+      linear-gradient(180deg, #101d31, #050912 80%);
 }
 
-/* SVG BATTLEFIELD */
-.battle {
+/* SNOW */
+#snow {
     position: fixed;
     inset: 0;
     width: 100%;
     height: 100%;
-    z-index: -4;
-}
-
-.castle {
-    fill: #101c2b;
-    stroke: #52657a;
-    stroke-width: 2;
-}
-
-.mountain {
-    fill: #101a28;
-    stroke: #53657a;
-    stroke-width: 2;
-}
-
-.warrior {
-    fill: #080c13;
-    stroke: #65758a;
-    stroke-width: 2;
-}
-
-.sword {
-    stroke: #dcecff;
-    stroke-width: 5;
-    stroke-linecap: round;
-    filter: drop-shadow(0 0 8px #9bcfff);
+    z-index: 1;
+    pointer-events: none;
 }
 
 /* LIGHTNING */
 .lightning {
     position: fixed;
     inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: -2;
-}
-
-.bolt {
-    fill: none;
-    stroke: #d9edff;
-    stroke-width: 3;
+    z-index: 0;
+    background: #d9edff;
     opacity: 0;
-    filter: drop-shadow(0 0 12px #b6dfff);
-    animation: thunder 6s infinite;
-}
-
-.bolt.second {
-    stroke-width: 2;
-    animation-delay: 2.1s;
+    pointer-events: none;
+    animation: thunder 7s infinite;
 }
 
 @keyframes thunder {
-    0%, 88%, 91%, 94%, 100% { opacity: 0; }
-    89% { opacity: .9; }
-    90% { opacity: .05; }
-    92% { opacity: 1; }
+    0%, 86%, 89%, 93%, 100% { opacity: 0; }
+    87% { opacity: .22; }
+    88% { opacity: .03; }
+    90% { opacity: .35; }
 }
 
-/* LIGHT FLASH */
-.flash {
-    position: fixed;
-    inset: 0;
-    background: #dcecff;
-    opacity: 0;
-    pointer-events: none;
-    z-index: -1;
-    animation: flash 6s infinite;
-}
-
-@keyframes flash {
-    0%, 88%, 91%, 94%, 100% { opacity: 0; }
-    89% { opacity: .12; }
-    92% { opacity: .2; }
-}
-
-/* SNOW CANVAS */
-#snow {
-    position: fixed;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    pointer-events: none;
-    z-index: 2;
-}
-
-/* MAIN CARD */
+/* CARD */
 .container {
-    width: 90%;
-    max-width: 460px;
-    padding: 38px 25px;
-    text-align: center;
-    background: rgba(5, 11, 20, .83);
-    backdrop-filter: blur(12px);
-    border: 1px solid rgba(177, 208, 245, .8);
-    border-radius: 22px;
-    box-shadow:
-      0 0 30px #78a9e344,
-      inset 0 0 20px #b6d9ff0c;
     position: relative;
     z-index: 5;
-    animation: entrance 1.2s ease;
+    width: 90%;
+    max-width: 460px;
+    padding: 42px 25px;
+    text-align: center;
+
+    background: rgba(8, 17, 31, .85);
+    backdrop-filter: blur(15px);
+
+    border: 1px solid #9ccfff;
+    border-radius: 22px;
+
+    box-shadow:
+      0 0 30px #6bb8ff33,
+      inset 0 0 25px #8bcaff0c;
+
+    animation: appear 1s ease;
 }
 
-@keyframes entrance {
+@keyframes appear {
     from {
         opacity: 0;
-        transform: translateY(35px) scale(.9);
+        transform: translateY(30px);
     }
     to {
         opacity: 1;
-        transform: translateY(0) scale(1);
+        transform: translateY(0);
     }
 }
 
 /* ROYALMOD */
 .crown {
-    font-size: 27px;
-    margin-bottom: 10px;
-    filter: drop-shadow(0 0 8px gold);
+    font-size: 29px;
+    margin-bottom: 12px;
+    filter: drop-shadow(0 0 10px gold);
 }
 
 .royal {
     font-size: 39px;
     font-weight: 900;
     letter-spacing: 5px;
-    color: #f5d88a;
-    text-shadow: 0 0 18px #e6bd62aa;
-    margin-bottom: 12px;
+    color: #f6d98d;
+    text-shadow: 0 0 20px #e5b84f88;
 }
 
 .line {
     width: 110px;
     height: 3px;
+    margin: 18px auto 28px;
     background: linear-gradient(
-      90deg, transparent, #e6c477, transparent
+      90deg, transparent, #e9c46b, transparent
     );
-    margin: 0 auto 27px;
 }
 
 h2 {
     font-size: 23px;
-    color: #d9eaff;
+    color: #d9edff;
     letter-spacing: 2px;
-    text-shadow: 0 0 15px #8dbdff;
+    text-shadow: 0 0 15px #70baff;
     margin-bottom: 30px;
 }
 
 .label {
+    color: #b7cbe2;
     font-size: 12px;
     letter-spacing: 4px;
-    color: #bdcde0;
     margin-bottom: 15px;
 }
 
-/* KEY */
+/* KEY BOX */
 .key {
-    padding: 19px 8px;
-    border: 1px solid #a9cfff;
+    padding: 20px 8px;
+    background: rgba(0, 0, 0, .65);
+    border: 1px solid #8fcaff;
     border-radius: 12px;
-    background: rgba(0, 0, 0, .7);
+
     font-size: 18px;
     font-weight: bold;
     letter-spacing: 1px;
+
     cursor: pointer;
-    transition: .3s;
     user-select: none;
+    transition: .3s;
+
+    box-shadow: 0 0 15px #61b6ff22;
 }
 
 .key:hover {
-    background: #d9eaff;
-    color: #07101d;
-    box-shadow: 0 0 25px #9bcfff;
+    background: #dcefff;
+    color: #071321;
+    box-shadow: 0 0 25px #8bcaff;
     transform: scale(1.03);
 }
 
@@ -221,22 +166,23 @@ h2 {
 
 #message {
     min-height: 20px;
-    margin-top: 22px;
-    color: #75ffb7;
+    margin-top: 23px;
+    color: #68ffb0;
     font-size: 13px;
     letter-spacing: 1px;
 }
 
 .footer {
-    margin-top: 32px;
-    color: #9baec5;
+    margin-top: 35px;
+    color: #9db1ca;
     font-size: 11px;
     letter-spacing: 3px;
 }
 
+/* MOBILE */
 @media(max-width:480px) {
     .container {
-        padding: 32px 18px;
+        padding: 35px 18px;
     }
 
     .royal {
@@ -256,148 +202,9 @@ h2 {
 
 <body>
 
-<div class="sky"></div>
-
-<!-- DRAWN MEDIEVAL BATTLEFIELD -->
-<svg class="battle" viewBox="0 0 1200 800"
-preserveAspectRatio="xMidYMid slice">
-
-<defs>
-  <linearGradient id="ground" x2="0" y2="1">
-    <stop stop-color="#29394b"/>
-    <stop offset="1" stop-color="#050911"/>
-  </linearGradient>
-  <linearGradient id="fire" x2="0" y2="1">
-    <stop stop-color="#fff3a0"/>
-    <stop offset="1" stop-color="#e65c13"/>
-  </linearGradient>
-</defs>
-
-<!-- MOON -->
-<circle cx="920" cy="145" r="58"
-fill="#dceaff" opacity=".15"/>
-
-<!-- MOUNTAINS -->
-<path class="mountain"
-d="M0 410 L130 230 L260 380 L420 190
-L560 390 L720 200 L850 390 L1030 170
-L1200 390 L1200 800 L0 800Z"/>
-
-<!-- SNOW PEAKS -->
-<path fill="#dce9f4" opacity=".55"
-d="M130 230 L165 280 L195 270 L130 230
-L420 190 L460 260 L490 245 L420 190
-L720 200 L760 270 L790 255 L720 200
-L1030 170 L1070 245 L1100 230 L1030 170"/>
-
-<!-- CASTLE -->
-<g class="castle">
-<path d="M800 350 L800 250 L830 250 L830 210
-L860 210 L860 250 L900 250 L900 180
-L930 180 L930 250 L975 250 L975 210
-L1005 210 L1005 250 L1040 250 L1040 350Z"/>
-<path d="M790 350 L1050 350 L1090 400 L760 400Z"/>
-<path d="M850 400 L850 315 L880 315 L880 400
-M950 400 L950 315 L980 315 L980 400"/>
-<path d="M900 350 L900 290 L930 290 L930 350"/>
-</g>
-
-<!-- CASTLE LIGHTS -->
-<g fill="#ff9c38">
-<circle cx="875" cy="335" r="5"/>
-<circle cx="965" cy="335" r="5"/>
-<circle cx="920" cy="280" r="5"/>
-</g>
-
-<!-- BATTLE GROUND -->
-<path fill="url(#ground)"
-d="M0 420 Q400 360 800 440 Q1000 400 1200 430
-L1200 800 L0 800Z"/>
-
-<!-- DISTANT ARMIES -->
-<g fill="#060b12" stroke="#34465a" stroke-width="2">
-<path d="M20 470 l15 -50 15 50 M50 480 l15 -60 15 60
-M100 475 l15 -50 15 50 M150 480 l15 -55 15 55
-M250 470 l15 -60 15 60 M350 475 l15 -50 15 50
-M500 480 l15 -65 15 65 M650 480 l15 -50 15 50
-M750 470 l15 -55 15 55 M1050 480 l15 -65 15 65"/>
-</g>
-
-<!-- SPEARS AND BANNERS -->
-<g stroke="#71849b" stroke-width="3" fill="none">
-<path d="M80 460 L90 300 M180 470 L175 320
-M350 470 L360 290 M650 470 L640 310
-M1100 470 L1090 300"/>
-</g>
-
-<g fill="#25384e">
-<path d="M90 310 l50 20 -50 40Z"/>
-<path d="M175 330 l-45 20 45 30Z"/>
-<path d="M360 300 l55 25 -55 40Z"/>
-<path d="M1090 310 l-55 25 55 40Z"/>
-</g>
-
-<!-- FIRE -->
-<g fill="url(#fire)">
-<path d="M160 465 Q120 420 160 390 Q165 430 180 400
-Q215 445 175 465Z"/>
-<path d="M1060 460 Q1030 425 1060 390
-Q1070 420 1080 400 Q1110 445 1060 460Z"/>
-</g>
-
-<!-- WARRIOR CLOAK -->
-<path class="warrior"
-d="M430 400 Q350 410 315 490
-L270 670 L420 630 L510 690
-L550 490 Q520 410 470 400Z"/>
-
-<!-- WARRIOR BODY -->
-<path fill="#101824" stroke="#78889a" stroke-width="3"
-d="M405 390 L425 330 L485 330 L515 405
-L490 500 L420 500Z"/>
-
-<!-- WARRIOR HEAD -->
-<circle cx="455" cy="300" r="36"
-fill="#11151c" stroke="#75879c" stroke-width="3"/>
-
-<!-- HAIR -->
-<path fill="#080c12"
-d="M420 300 Q400 240 450 245 Q510 235 490 305
-L475 280 L460 300 L445 275 L430 310Z"/>
-
-<!-- ARM -->
-<path fill="none" stroke="#171e29"
-stroke-width="22" stroke-linecap="round"
-d="M485 370 L550 325 L605 270"/>
-
-<!-- SWORD -->
-<path class="sword" d="M605 270 L680 115"/>
-<path stroke="#dcecff" stroke-width="7"
-d="M595 280 L620 265"/>
-
-<!-- LEGS -->
-<path stroke="#101824" stroke-width="28"
-stroke-linecap="round"
-d="M400 490 L360 650 M475 490 L510 650"/>
-
-</svg>
-
-<!-- LIGHTNING -->
-<svg class="lightning" viewBox="0 0 1200 800"
-preserveAspectRatio="none">
-<path class="bolt"
-d="M800 0 L750 130 L790 180 L720 280
-L750 330 L650 460"/>
-<path class="bolt second"
-d="M350 0 L390 100 L340 160 L400 240
-L360 320 L420 430"/>
-</svg>
-
-<div class="flash"></div>
-
+<div class="lightning"></div>
 <canvas id="snow"></canvas>
 
-<!-- KEY CARD -->
 <div class="container">
 
     <div class="crown">👑</div>
@@ -411,7 +218,7 @@ L360 320 L420 430"/>
     <div class="label">YOUR ACTIVATION KEY</div>
 
     <div class="key" onclick="copyKey()">
-        BLZ-HXCQ6W-D5UT7C
+        BLZ-LX5KUR-59RZ8L
     </div>
 
     <p id="message">✦ CLICK KEY TO COPY ✦</p>
@@ -424,53 +231,59 @@ L360 320 L420 430"/>
 
 <script>
 
-/* SNOW PARTICLES */
+/* SNOW ANIMATION */
 const canvas = document.getElementById("snow");
 const ctx = canvas.getContext("2d");
 
-let particles = [];
+let snowflakes = [];
 
-function resize() {
+function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
 
-    particles = Array.from({length:120}, () => ({
-        x: Math.random() * canvas.width,
-        y: Math.random() * canvas.height,
-        size: Math.random() * 3 + 1,
-        speed: Math.random() * 2 + .5,
-        drift: Math.random() * 1.5 - .75
-    }));
+    snowflakes = [];
+
+    for (let i = 0; i < 150; i++) {
+        snowflakes.push({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            radius: Math.random() * 2.5 + 0.5,
+            speed: Math.random() * 1.8 + 0.5,
+            wind: Math.random() * 1.2 - 0.6
+        });
+    }
 }
 
-function animateSnow() {
+function drawSnow() {
     ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-    particles.forEach(p => {
+    snowflakes.forEach(s => {
         ctx.beginPath();
-        ctx.fillStyle = "rgba(225,240,255,.8)";
-        ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+        ctx.arc(s.x, s.y, s.radius, 0, Math.PI * 2);
+        ctx.fillStyle = "rgba(230,245,255,0.85)";
+        ctx.shadowBlur = 8;
+        ctx.shadowColor = "#a9d9ff";
         ctx.fill();
 
-        p.y += p.speed;
-        p.x += p.drift;
+        s.y += s.speed;
+        s.x += s.wind;
 
-        if (p.y > canvas.height) {
-            p.y = -5;
-            p.x = Math.random() * canvas.width;
+        if (s.y > canvas.height) {
+            s.y = -5;
+            s.x = Math.random() * canvas.width;
         }
 
-        if (p.x > canvas.width) p.x = 0;
-        if (p.x < 0) p.x = canvas.width;
+        if (s.x > canvas.width) s.x = 0;
+        if (s.x < 0) s.x = canvas.width;
     });
 
-    requestAnimationFrame(animateSnow);
+    requestAnimationFrame(drawSnow);
 }
 
-window.addEventListener("resize", resize);
-resize();
-animateSnow();
+window.addEventListener("resize", resizeCanvas);
 
+resizeCanvas();
+drawSnow();
 
 /* COPY KEY */
 async function copyKey() {
